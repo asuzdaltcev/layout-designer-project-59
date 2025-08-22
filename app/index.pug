@@ -3,30 +3,167 @@ html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Layout Designer Project
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet")
+    title Hexlet Chat
     link(href="css/main.css" rel="stylesheet")
-  body
-    .container
-      h1.text-center.my-5 Добро пожаловать в проект!
-      p.text-center Это базовый шаблон для вашего проекта с использованием Gulp, SASS, Pug и Bootstrap.
-      
-      .row.mt-5
-        .col-md-4
-          .card
-            .card-body
-              h5.card-title Gulp
-              p.card-text Автоматизация сборки проекта
-        .col-md-4
-          .card
-            .card-body
-              h5.card-title SASS
-              p.card-text Препроцессор для CSS
-        .col-md-4
-          .card
-            .card-body
-              h5.card-title Pug
-              p.card-text Шаблонизатор для HTML
+  
+  // Данные контактов
+  -
+    var contacts = {
+      "A": [{
+        name: "Алексей Примадонин",
+        status: "Онлайн",
+        avatar: "images/chat/avatar_3.jpg"
+      }],
 
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js")
+      "В": [{
+        name: "Вениамин Редакторович",
+        status: "Онлайн",
+        avatar: "images/chat/avatar_4.jpg"
+      }],
+
+      "Д": [{
+        name: "Джедай Падаванов",
+        status: "Был онлайн вчера",
+        avatar: "images/chat/avatar_2.jpg"
+      }],
+
+      "К": [{
+        name: "Кодовёнок Хекслетович",
+        status: "Был онлайн 3 часа назад",
+        avatar: "images/chat/avatar_1.jpg"
+      },
+      {
+        name: "Королева Верстальщина",
+        status: "Была онлайн вчера",
+        avatar: "images/chat/avatar_5.jpg"
+      }],
+
+      "П": [{
+        name: "Питонист Джангович",
+        status: "Был онлайн вчера",
+        avatar: "images/chat/avatar_6.jpg"
+      }],
+    }
+  
+  body.p-4.vh-100
+    .container-xxl.radius.shadow-sm.bg-white.h-100
+      .row.h-100
+        // Левая панель - 4 столбца
+        .col-12.col-xl-4.no-scroll-overflow.d-flex.flex-column-reverse.d-xl-block.border-right.h-100
+          // Навигация
+          .row.radius-none.radius-left-top-xl.bg-primary
+            .col.p-0
+              nav
+                ul.nav.px-3.py-3.p-xl-3.d-flex.align-items-center#tab(role="tablist")
+                  li.me-auto.me-xl-0
+                    a.p-0.d-flex.align-items-center.text-light.nav-link(href="#" id="main" aria-selected="false" tabindex="-1" role="tab")
+                      img.filter-white(src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25")
+                  li.ms-4.nav-item.small(role="presentation")
+                    a.p-0.d-flex.align-items-center.text-light.nav-link.active(href="#contacts" id="contacts" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="true")
+                      img.filter-light.me-xl-2(src="images/sprite.svg#people" alt="contacts image" width="30" height="40")
+                      p.d-none.d-xl-block.m-0 Контакты
+                  li.ms-4.nav-item.small(role="presentation")
+                    a.p-0.d-flex.align-items-center.text-light.nav-link(href="#chats" id="chat" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="false" tabindex="-1")
+                      img.filter-light.me-2.me-xl-1(src="images/sprite.svg#chat" alt="chat image" width="40" height="40")
+                      p.d-none.d-xl-block.m-0 Сообщения
+                  li.ms-4.nav-item.small(role="presentation")
+                    a.p-0.d-flex.align-items-center.text-light.nav-link(href="#profile" id="profile" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane" aria-selected="false" tabindex="-1")
+                      img.filter-light.me-4.me-xl-2(src="images/sprite.svg#person" alt="profile image" width="25" height="40")
+                      p.d-none.d-xl-block.m-0 Профиль
+          
+          // Контент табов
+          .row.no-scroll-overflow.mb-auto
+            .col.p-0
+              .tab-content#tabContent
+                // Таб Контакты
+                .tab-pane.fade.pt-5.px-4.active.show#contacts-tab-pane(role="tabpanel" aria-label="contact-tab" tabindex="0" aria-labelledby="#contacts")
+                  h2.fw-bold.mb-4 Контакты
+                  form.mb-5(action="/")
+                    input.p-4.search-input.border-bottom(placeholder="Поиск по контактам" id="search-contacts" type="search")
+                  
+                  // Подключение компонентов
+                  include components/contact
+                  include components/avatar
+                  
+                  // Список контактов
+                  each contactsByLetter, letter in contacts
+                    .mb-5
+                      p.text-muted= letter
+                      each contact in contactsByLetter
+                        +contact(contact.name, contact.status, contact.avatar)
+                
+                // Таб Сообщения
+                .tab-pane.fade.pt-5.px-4#chat-tab-pane(role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat")
+                  h2.fw-bold.mb-4 Чаты
+                  form.mb-5(action="/")
+                    input.p-4.search-input.border-bottom(placeholder="Поиск по сообщениям" id="search-messages" type="search")
+                  
+                  .mb-3
+                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
+                      img.round(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
+                      .mx-4.overflow-hidden
+                        .d-flex.align-items-center
+                          p.m-0.fw-bold Вениамин Редакторович
+                          p.mb-0.pe-2.small.sidebar-card-time 11:45
+                        p.m-0.small.sidebar-card-subtext.ellipsis o_O
+                  
+                  .mb-3
+                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
+                      img.round(src="images/chat/avatar_2.jpg" alt="user-avatar" width="50" height="50")
+                      .mx-4.overflow-hidden
+                        .d-flex.align-items-center
+                          p.m-0.fw-bold Джедай Падаванов
+                          p.mb-0.pe-2.small.sidebar-card-time 10:12
+                        p.m-0.small.sidebar-card-subtext.ellipsis Привет, скоро третий проект? Уже скоро надо будет выложить
+                  
+                  .mb-3
+                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
+                      img.round(src="images/chat/avatar_3.jpg" alt="user-avatar" width="50" height="50")
+                      .mx-4.overflow-hidden
+                        .d-flex.align-items-center
+                          p.m-0.fw-bold Алексей Примадонин
+                          p.mb-0.pe-2.small.sidebar-card-time 08:53
+                        p.m-0.small.sidebar-card-subtext.ellipsis Тесты упали &gt;_&lt;
+                
+                // Таб Профиль
+                .tab-pane.fade.pt-5.px-4#profile-tab-pane(role="tabpanel" aria-label="profile-tab" tabindex="0" aria-labelledby="#profile")
+                  h2.fw-bold.mb-4 Профиль
+                  form.mb-5(action="/")
+                    input.p-4.search-input.border-bottom(placeholder="Поиск по сообщениям" id="search-profile" type="search")
+                  
+                  .card.border-0.text-center.my-6
+                    img.round.mx-auto.mb-2(src="images/chat/avatar_1.jpg" alt="user avatar" width="90" height="90")
+                    h6.fw-bold.card-title.mb-4 Кодовёнок Хекслетович
+                    .card-body.py-0
+                      p.card-text.text-black-50 Милый и скромный помощник начинающих разработчиков. Люблю JavaScript
+                  
+                  ul.list-group.list-group-flush.mb-4
+                    li.list-group-item.d-flex.align-items-center
+                      .small
+                        p.m-0.text-black-50 Страна
+                        p.m-0 Москва, Россия
+                      img.ms-auto.filter-grey(src="images/sprite.svg#country" alt="country image" width="20" height="20")
+                    li.list-group-item.d-flex.align-items-center
+                      .small
+                        p.m-0.text-black-50 Телефон
+                        p.m-0 +7 (499) 123-45-67
+                      img.ms-auto.filter-grey(src="images/sprite.svg#phone" alt="phone image" width="20" height="20")
+                    li.list-group-item.d-flex.align-items-center
+                      .small
+                        p.m-0.text-black-50 Email
+                        p.m-0 nikita.m@hexlet.io
+                      img.ms-auto.filter-grey(src="images/sprite.svg#email" alt="email image" width="20" height="20")
+                    li.list-group-item.d-flex.align-items-center
+                      .small
+                        p.m-0.text-black-50 Twitter
+                        p.m-0 @n_mikhaylov
+                      img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
+        
+        // Правая область - 8 столбцов (фиксированная)
+        .col-8.position-relative.d-none.d-xl-block
+          .centerized
+            img.round.mb-7(src="images/chat/avatar_1.jpg" alt="user avatar" width="200" height="200")
+            h6.m-0 Привет, Кодовёнок
+            p.m-0.small.text-secondary Выбери чат, чтобы начать общаться
+
     script(src="js/main.js")

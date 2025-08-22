@@ -1,0 +1,7 @@
+// Компонент Contact
+mixin contact(name, status, avatar)
+  a.sidebar-card.mt-3rem.px-1-5rem.py-9.shadow-sm.d-flex.mb-1rem(href="#")
+    img.avatar(src=avatar alt="user-avatar" width="50" height="50")
+    .mx-4
+      p.m-0.fw-bold= name
+      p.m-0.small.sidebar-card-subtext= status

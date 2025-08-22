@@ -36,7 +36,7 @@
     "stylelint-config-standard-scss": "^11.1.0",
     "stylelint-order": "^6.0.3",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-scss": "^5.4.0",
+    "stylelint-scss": "^4.7.0",
     "surge": "^0.23.1"
   },
   "dependencies": {

@@ -38,7 +38,9 @@ function pugTask() {
 // Компиляция SASS в CSS
 function sassTask() {
   return gulp.src('app/styles/main.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(gulp.dest(paths.build.css))
