@@ -1,2 +1,122 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/asuzdaltcev/layout-designer-project-59/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/asuzdaltcev/layout-designer-project-59/actions)
+# Layout Designer Project 59
+
+Проект для создания веб-макетов с использованием современных технологий.
+
+## Используемые технологии
+
+- **Gulp** - автоматизация сборки
+- **Gulp SASS** - компиляция SASS в CSS
+- **Gulp Pug** - компиляция Pug в HTML
+- **Gulp SVG Sprite** - создание SVG спрайтов
+- **Gulp Concat** - объединение файлов
+- **Bootstrap** - CSS фреймворк
+- **Surge** - деплой проекта
+
+## Структура проекта
+
+```
+layout-designer-project-59/
+├── app/                    # Исходные файлы
+│   ├── styles/            # SASS файлы
+│   ├── js/                # JavaScript файлы
+│   ├── images/            # Изображения
+│   │   └── svg/          # SVG иконки для спрайта
+│   ├── fonts/             # Шрифты
+│   └── *.pug             # Pug шаблоны
+├── build/                 # Скомпилированные файлы
+├── gulpfile.js           # Конфигурация Gulp
+├── package.json          # Зависимости проекта
+├── .stylelintrc.yml      # Конфигурация Stylelint
+├── .htmlhintrc           # Конфигурация Htmlhint
+└── .gitignore            # Исключения Git
+```
+
+## Установка и запуск
+
+1. **Установите зависимости:**
+   ```bash
+   npm install
+   ```
+
+2. **Запустите проект в режиме разработки:**
+   ```bash
+   npm start
+   ```
+   Это запустит Gulp с отслеживанием изменений и откроет браузер.
+
+3. **Соберите проект для продакшена:**
+   ```bash
+   npm run build
+   ```
+
+4. **Деплой на Surge:**
+   ```bash
+   npm run deploy
+   ```
+
+## Доступные команды
+
+- `npm start` - запуск в режиме разработки
+- `npm run build` - сборка проекта
+- `npm run deploy` - деплой на Surge
+- `npm run lint:css` - проверка CSS/SASS файлов
+- `npm run lint:html` - проверка HTML/Pug файлов
+
+## Особенности
+
+### Gulp задачи
+- **pug** - компиляция Pug в HTML
+- **sass** - компиляция SASS в CSS с автопрефиксером
+- **svgSprite** - создание SVG спрайта
+- **js** - объединение и минификация JavaScript
+- **images** - копирование изображений
+- **fonts** - копирование шрифтов
+- **watch** - отслеживание изменений с BrowserSync
+
+### Линтеры
+- **Stylelint** - проверка CSS/SASS кода
+- **Htmlhint** - проверка HTML/Pug кода
+
+### BrowserSync
+Автоматическое обновление браузера при изменении файлов.
+
+## Настройка линтеров
+
+### Stylelint
+Конфигурация находится в `.stylelintrc.yml` и включает:
+- Стандартные правила
+- Рациональный порядок свойств
+- Поддержку SCSS
+
+### Htmlhint
+Конфигурация находится в `.htmlhintrc` и включает:
+- Проверку валидности HTML
+- Правила для атрибутов
+- Проверку доступности
+
+## Добавление новых страниц
+
+1. Создайте новый `.pug` файл в папке `app/`
+2. Добавьте ссылку на страницу в навигацию
+3. Gulp автоматически скомпилирует новый файл
+
+## Добавление стилей
+
+1. Создайте новый `.scss` файл в папке `app/styles/`
+2. Импортируйте его в `main.scss`
+3. Стили автоматически скомпилируются
+
+## Добавление JavaScript
+
+1. Создайте новый `.js` файл в папке `app/js/`
+2. Gulp автоматически объединит все JS файлы
+
+## SVG спрайты
+
+1. Поместите SVG файлы в `app/images/svg/`
+2. Gulp создаст спрайт в `build/images/sprite.svg`
+3. Используйте иконки через CSS: `background-image: url('../images/sprite.svg#icon-name')`
+
+## Лицензия
+
+ISC
