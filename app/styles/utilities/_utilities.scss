@@ -116,6 +116,14 @@ $utilities: map-merge(
       values: (
         null: 1px solid #efefef,
       )
+    ),
+    // Утилита для max-width: 558px
+    "max-width-text": (
+      property: max-width,
+      class: max-width-text,
+      values: (
+        null: 558px,
+      )
     )
   )
 );
