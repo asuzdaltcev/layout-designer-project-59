@@ -44,6 +44,28 @@ html(lang="ru")
         avatar: "images/chat/avatar_6.jpg"
       }],
     }
+
+    // Данные сообщений
+    var messages = [
+      {
+        name: "Вениамин Редакторович",
+        time: "11:45",
+        lastMessage: "o_O",
+        avatar: "images/chat/avatar_4.jpg"
+      },
+      {
+        name: "Джедай Падаванов",
+        time: "10:12",
+        lastMessage: "Привет, скоро третий проект? Уже скоро надо будет выложить",
+        avatar: "images/chat/avatar_2.jpg"
+      },
+      {
+        name: "Алексей Примадонин",
+        time: "08:53",
+        lastMessage: "Тесты упали &gt;_&lt;",
+        avatar: "images/chat/avatar_3.jpg"
+      }
+    ]
   
   body.p-4.vh-100
     .container-xxl.radius.shadow-sm.bg-white.h-100
@@ -59,11 +81,11 @@ html(lang="ru")
                     a.p-0.d-flex.align-items-center.text-light.nav-link(href="#" id="main" aria-selected="false" tabindex="-1" role="tab")
                       img.filter-white(src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25")
                   li.ms-4.nav-item.small(role="presentation")
-                    a.p-0.d-flex.align-items-center.text-light.nav-link.active(href="#contacts" id="contacts" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="true")
+                    a.p-0.d-flex.align-items-center.text-light.nav-link.active(href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="true")
                       img.filter-light.me-xl-2(src="images/sprite.svg#people" alt="contacts image" width="30" height="40")
                       p.d-none.d-xl-block.m-0 Контакты
                   li.ms-4.nav-item.small(role="presentation")
-                    a.p-0.d-flex.align-items-center.text-light.nav-link(href="#chats" id="chat" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="false" tabindex="-1")
+                    a.p-0.d-flex.align-items-center.text-light.nav-link(href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="false" tabindex="-1")
                       img.filter-light.me-2.me-xl-1(src="images/sprite.svg#chat" alt="chat image" width="40" height="40")
                       p.d-none.d-xl-block.m-0 Сообщения
                   li.ms-4.nav-item.small(role="presentation")
@@ -84,6 +106,7 @@ html(lang="ru")
                   // Подключение компонентов
                   include components/contact
                   include components/avatar
+                  include components/message
                   
                   // Список контактов
                   each contactsByLetter, letter in contacts
@@ -98,32 +121,9 @@ html(lang="ru")
                   form.mb-5(action="/")
                     input.p-4.search-input.border-bottom(placeholder="Поиск по сообщениям" id="search-messages" type="search")
                   
-                  .mb-3
-                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
-                      img.round(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
-                      .mx-4.overflow-hidden
-                        .d-flex.align-items-center
-                          p.m-0.fw-bold Вениамин Редакторович
-                          p.mb-0.pe-2.small.sidebar-card-time 11:45
-                        p.m-0.small.sidebar-card-subtext.ellipsis o_O
-                  
-                  .mb-3
-                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
-                      img.round(src="images/chat/avatar_2.jpg" alt="user-avatar" width="50" height="50")
-                      .mx-4.overflow-hidden
-                        .d-flex.align-items-center
-                          p.m-0.fw-bold Джедай Падаванов
-                          p.mb-0.pe-2.small.sidebar-card-time 10:12
-                        p.m-0.small.sidebar-card-subtext.ellipsis Привет, скоро третий проект? Уже скоро надо будет выложить
-                  
-                  .mb-3
-                    a.sidebar-card.mt-7.px-3.py-9.shadow-sm.d-flex(href="#")
-                      img.round(src="images/chat/avatar_3.jpg" alt="user-avatar" width="50" height="50")
-                      .mx-4.overflow-hidden
-                        .d-flex.align-items-center
-                          p.m-0.fw-bold Алексей Примадонин
-                          p.mb-0.pe-2.small.sidebar-card-time 08:53
-                        p.m-0.small.sidebar-card-subtext.ellipsis Тесты упали &gt;_&lt;
+                  // Список сообщений
+                  each message in messages
+                    +message(message.name, message.time, message.lastMessage, message.avatar)
                 
                 // Таб Профиль
                 .tab-pane.fade.pt-5.px-4#profile-tab-pane(role="tabpanel" aria-label="profile-tab" tabindex="0" aria-labelledby="#profile")
@@ -166,4 +166,5 @@ html(lang="ru")
             h6.m-0 Привет, Кодовёнок
             p.m-0.small.text-secondary Выбери чат, чтобы начать общаться
 
+    script(src="js/bootstrap.bundle.min.js")
     script(src="js/main.js")

@@ -83,6 +83,13 @@ function fontsTask() {
     .pipe(browserSync.stream());
 }
 
+// Копирование Bootstrap JS
+function bootstrapJsTask() {
+  return gulp.src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+    .pipe(gulp.dest(paths.build.js))
+    .pipe(browserSync.stream());
+}
+
 // Отслеживание изменений
 function watchTask() {
   browserSync.init({
@@ -106,13 +113,14 @@ exports.svgSprite = svgSpriteTask;
 exports.js = jsTask;
 exports.images = imagesTask;
 exports.fonts = fontsTask;
+exports.bootstrapJs = bootstrapJsTask;
 exports.watch = watchTask;
 
 // Задача по умолчанию
 exports.default = gulp.series(
-  gulp.parallel(pugTask, sassTask, svgSpriteTask, jsTask, imagesTask, fontsTask),
+  gulp.parallel(pugTask, sassTask, svgSpriteTask, jsTask, imagesTask, fontsTask, bootstrapJsTask),
   watchTask
 );
 
 // Задача сборки
-exports.build = gulp.parallel(pugTask, sassTask, svgSpriteTask, jsTask, imagesTask, fontsTask);
+exports.build = gulp.parallel(pugTask, sassTask, svgSpriteTask, jsTask, imagesTask, fontsTask, bootstrapJsTask);
