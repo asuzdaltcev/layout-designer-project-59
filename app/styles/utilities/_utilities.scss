@@ -124,6 +124,22 @@ $utilities: map-merge(
       values: (
         null: 558px,
       )
+    ),
+    // Утилита для column-gap: 0.8rem
+    "column-gap-header": (
+      property: column-gap,
+      class: column-gap-header,
+      values: (
+        null: 0.8rem,
+      )
+    ),
+    // Утилита для padding-start: 3.2rem
+    "padding-start-header": (
+      property: padding-left,
+      class: ps-header,
+      values: (
+        null: 3.2rem,
+      )
     )
   )
 );
