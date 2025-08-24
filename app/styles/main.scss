@@ -590,3 +590,11 @@ body {
     padding-top: 1rem !important;
   }
 }
+
+// Медиазапрос для экранов шириной от 500px
+@media (max-width: 500px) {
+  // Убираем margin-top у компонента contact
+  .sidebar-card.mt-3rem {
+    margin-top: 0 !important;
+  }
+}
