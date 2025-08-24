@@ -591,10 +591,93 @@ body {
   }
 }
 
-// Медиазапрос для экранов шириной от 500px
+// Медиазапрос для экранов шириной до 500px
 @media (max-width: 500px) {
   // Убираем margin-top у компонента contact
   .sidebar-card.mt-3rem {
     margin-top: 0 !important;
+  }
+  
+  // Скрываем левую панель на мобильных устройствах
+  .col-12.col-xl-4 {
+    display: none !important;
+  }
+  
+  // Показываем мобильную версию чата
+  .mobile-chat {
+    display: flex !important;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  // Адаптируем сообщения для мобильных устройств
+  .mobile-chat .chat-messages {
+    height: calc(100vh - 200px); // Высота минус футер, заголовок и навигация
+    padding: 0 !important;
+  }
+  
+  .mobile-chat .chat-message_1,
+  .mobile-chat .chat-message_2,
+  .mobile-chat .chat-message_3,
+  .mobile-chat .chat-message_4,
+  .mobile-chat .chat-message_5 {
+    padding-left: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+  
+  .mobile-chat .max-width-text {
+    max-width: 80% !important;
+  }
+  
+  // Центрируем все сообщения в мобильной версии
+  .mobile-chat .chat-message_1,
+  .mobile-chat .chat-message_2,
+  .mobile-chat .chat-message_3,
+  .mobile-chat .chat-message_4,
+  .mobile-chat .chat-message_5 {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .mobile-chat .chat-message_1 .bg-light,
+  .mobile-chat .chat-message_2 .bg-primary,
+  .mobile-chat .chat-message_3 .bg-light,
+  .mobile-chat .chat-message_4 .bg-primary,
+  .mobile-chat .chat-message_5 .bg-light {
+    margin-left: 48px !important;
+    margin-right: 48px !important;
+    width: calc(100% - 96px) !important;
+    max-width: none !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  
+  // Заголовок вверху
+  .mobile-chat .chat-header {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+  }
+  
+  // Футер над навигацией
+  .mobile-chat .chat-footer {
+    position: sticky;
+    border-top: 1px solid #dee2e6;
+    border-bottom: none;
+  }
+  
+  // Навигация внизу
+  .mobile-chat .mobile-nav {
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  // Убираем боковые паддинги у контейнера
+  .container-xxl {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
