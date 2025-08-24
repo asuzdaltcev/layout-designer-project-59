@@ -501,3 +501,53 @@ body {
   border-top: 1px solid map-get($theme-colors, "chat-border");
   padding: 1rem 0;
 }
+
+// Медиазапрос для экранов шириной до 1200px
+@media (max-width: 1200px) {
+  // Убираем радиус у контейнера на маленьких экранах
+  .container-xxl.radius {
+    border-radius: 0 !important;
+  }
+  
+  // Скрываем правую область на экранах меньше 1200px
+  .col-8.position-relative.d-none.d-xl-block {
+    display: none !important;
+  }
+  
+  // Левая область занимает всю ширину
+  .col-12.col-xl-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  // Убираем правую границу у левой панели
+  .border-right {
+    border-right: none !important;
+  }
+  
+  // Адаптируем высоту контейнера сообщений
+  .chat-messages {
+    height: calc(100vh - 200px); // Уменьшаем высоту для мобильных устройств
+  }
+  
+  // Адаптируем отступы навигации
+  .nav.px-3.py-3.p-xl-3 {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  // Адаптируем размеры аватаров в чате
+  .chat-messages .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  // Адаптируем отступы сообщений
+  .chat-message_1,
+  .chat-message_2,
+  .chat-message_3,
+  .chat-message_4,
+  .chat-message_5 {
+    padding-left: 1rem !important;
+    padding-top: 1rem !important;
+  }
+}
