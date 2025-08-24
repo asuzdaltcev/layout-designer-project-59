@@ -140,6 +140,14 @@ $utilities: map-merge(
       values: (
         null: 3.2rem,
       )
+    ),
+    // Утилита для padding-y: 10px
+    "padding-y-10": (
+      property: padding-top padding-bottom,
+      class: py-10,
+      values: (
+        null: 10px,
+      )
     )
   )
 );

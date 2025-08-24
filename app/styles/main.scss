@@ -469,6 +469,30 @@ body {
   color: map-get($theme-colors, "secondary");
 }
 
+// Стили для заголовка сообщения с именем и временем
+.message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 269px;
+}
+
+// Стили для иконки отправки сообщения
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: map-get($theme-colors, "primary");
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper img {
+  width: 24px;
+  height: 24px;
+}
+
 .ellipsis {
   white-space: nowrap;
   overflow: hidden;
@@ -494,12 +518,15 @@ body {
 
 // Стили для зафиксированного футера чата
 .chat-footer {
-  position: sticky;
+  position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1030;
   background-color: #fff;
   border-top: 1px solid map-get($theme-colors, "chat-border");
-  padding: 1rem 0;
+  padding: 0;
+  margin: 0;
 }
 
 // Медиазапрос для экранов шириной до 1200px

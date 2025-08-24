@@ -82,11 +82,11 @@ html(lang="ru")
                       img.filter-white(src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25")
                   .d-flex.column-gap-header.ps-header
                     li.nav-item.small(role="presentation")
-                      a.p-0.d-flex.align-items-center.text-light.nav-link.active(href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="true")
+                      a.p-0.d-flex.align-items-center.text-light.nav-link(href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="false" tabindex="-1")
                         img.filter-light.me-xl-2(src="images/sprite.svg#people" alt="contacts image" width="30" height="40")
                         p.d-none.d-xl-block.m-0 Контакты
                     li.nav-item.small(role="presentation")
-                      a.p-0.d-flex.align-items-center.text-light.nav-link(href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="false" tabindex="-1")
+                      a.p-0.d-flex.align-items-center.text-light.nav-link.active(href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="true")
                         img.filter-light.me-2.me-xl-1(src="images/sprite.svg#chat" alt="chat image" width="40" height="40")
                         p.d-none.d-xl-block.m-0 Сообщения
                     li.nav-item.small(role="presentation")
@@ -99,7 +99,7 @@ html(lang="ru")
             .col.p-0
               .tab-content#tabContent
                 // Таб Контакты
-                .tab-pane.fade.pt-5.px-4.active.show#contacts-tab-pane(role="tabpanel" aria-label="contact-tab" tabindex="0" aria-labelledby="#contacts")
+                .tab-pane.fade.pt-5.px-4#contacts-tab-pane(role="tabpanel" aria-label="contact-tab" tabindex="0" aria-labelledby="#contacts")
                   h2.fw-bold.mb-4 Контакты
                   form.mb-5(action="/")
                     input.p-4.search-input.border-bottom(placeholder="Поиск по контактам" id="search-contacts" type="search")
@@ -117,7 +117,7 @@ html(lang="ru")
                         +contact(contact.name, contact.status, contact.avatar)
                 
                 // Таб Сообщения
-                .tab-pane.fade.pt-5.px-4#chat-tab-pane(role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat")
+                .tab-pane.fade.pt-5.px-4.active.show#chat-tab-pane(role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat")
                   h2.fw-bold.mb-4 Чаты
                   form.mb-5(action="/")
                     input.p-4.search-input.border-bottom(placeholder="Поиск по сообщениям" id="search-messages" type="search")
@@ -176,14 +176,14 @@ html(lang="ru")
                   p.m-0.small.sidebar-card-subtext Да, я уже вышел и минут череhз 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?
                 .div 
                   p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад
-            .chat-message_2.d-flex.align-items-end.ps-5.pt-3  
+            .chat-message_2.d-flex.align-items-end.pe-5.pt-3.flex-row-reverse  
               img.avatar(src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50")
               .bg-primary.p-4.max-width-text.m-0.radius.shadow-sm
                 .border-bottom
                   p.m-0.small.sidebar-card-subtext Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень
                 .div 
                   p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад
-            .chat-message_3.d-flex.align-items-end.ps-5.pt-5  
+            .chat-message_3.d-flex.align-items-end.ps-5.pt-3  
               img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
               .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
                 .border-bottom
@@ -191,14 +191,14 @@ html(lang="ru")
                   p.m-0.small.sidebar-card-subtext Лады
                 .div 
                   p.m-0.small.sidebar-card-subtext.ellipsis 5 минут назад    
-            .chat-message_4.d-flex.align-items-end.ps-5.pt-3  
+            .chat-message_4.d-flex.align-items-end.pe-5.pt-3.flex-row-reverse  
               img.avatar(src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50")
               .bg-primary.p-4.max-width-text.m-0.radius.shadow-sm
                 .border-bottom
                   p.m-0.small.sidebar-card-subtext А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие
                 .div 
                   p.m-0.small.sidebar-card-subtext.ellipsis 3 минуты назад  
-            .chat-message_5.d-flex.align-items-end.ps-5.pt-5  
+            .chat-message_5.d-flex.align-items-end.ps-5.pt-3  
               img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
               .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
                 .border-bottom
@@ -206,13 +206,13 @@ html(lang="ru")
                   p.m-0.small.sidebar-card-subtext о_О
                 .div 
                   p.m-0.small.sidebar-card-subtext.ellipsis Только что 
-          .chat-footer.d-flex.align-items-end.ps-5.pt-5               
-            .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
-              .border-bottom
-                p.m-0.fw-bold Вениамин Редакторович
-                p.m-0.small.sidebar-card-subtext Да, я уже вышел и минут череhз 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?
-              .div 
-                p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад           
+          .chat-footer.d-flex.align-items-end.justify-content-between              
+            .px-4.pt-4.m-0.d-flex.align-items-center.w-100
+              .border-bottom.flex-grow-1.py-10
+                form(action="/")
+                    input.p-4.search-input.border-bottom(placeholder="Напишите сообщение..." id="enter-message" type="text")
+              .icon-wrapper
+                img(src="images/svg/cursor.svg" alt="send message" width="24" height="24")                        
 
     script(src="js/bootstrap.bundle.min.js")
     script(src="js/main.js")

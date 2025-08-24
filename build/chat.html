@@ -19,9 +19,9 @@
                 <ul class="nav px-3 py-3 p-xl-3 d-flex align-items-center" id="tab" role="tablist">
                   <li class="me-auto me-xl-0"><a class="p-0 d-flex align-items-center text-light nav-link" href="#" id="main" aria-selected="false" tabindex="-1" role="tab"><img class="filter-white" src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25"></a></li>
                   <div class="d-flex column-gap-header ps-header">
-                    <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link active" href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="true"><img class="filter-light me-xl-2" src="images/sprite.svg#people" alt="contacts image" width="30" height="40">
+                    <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="false" tabindex="-1"><img class="filter-light me-xl-2" src="images/sprite.svg#people" alt="contacts image" width="30" height="40">
                         <p class="d-none d-xl-block m-0">Контакты</p></a></li>
-                    <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="false" tabindex="-1"><img class="filter-light me-2 me-xl-1" src="images/sprite.svg#chat" alt="chat image" width="40" height="40">
+                    <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link active" href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="true"><img class="filter-light me-2 me-xl-1" src="images/sprite.svg#chat" alt="chat image" width="40" height="40">
                         <p class="d-none d-xl-block m-0">Сообщения</p></a></li>
                     <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#profile" id="profile" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane" aria-selected="false" tabindex="-1"><img class="filter-light me-4 me-xl-2" src="images/sprite.svg#person" alt="profile image" width="25" height="40">
                         <p class="d-none d-xl-block m-0">Профиль</p></a></li>
@@ -35,7 +35,7 @@
             <div class="col p-0">
               <div class="tab-content" id="tabContent">
                 <!-- Таб Контакты-->
-                <div class="tab-pane fade pt-5 px-4 active show" id="contacts-tab-pane" role="tabpanel" aria-label="contact-tab" tabindex="0" aria-labelledby="#contacts">
+                <div class="tab-pane fade pt-5 px-4" id="contacts-tab-pane" role="tabpanel" aria-label="contact-tab" tabindex="0" aria-labelledby="#contacts">
                   <h2 class="fw-bold mb-4">Контакты</h2>
                   <form class="mb-5" action="/">
                     <input class="p-4 search-input border-bottom" placeholder="Поиск по контактам" id="search-contacts" type="search">
@@ -86,28 +86,28 @@
                   </div>
                 </div>
                 <!-- Таб Сообщения-->
-                <div class="tab-pane fade pt-5 px-4" id="chat-tab-pane" role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat">
+                <div class="tab-pane fade pt-5 px-4 active show" id="chat-tab-pane" role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat">
                   <h2 class="fw-bold mb-4">Чаты</h2>
                   <form class="mb-5" action="/">
                     <input class="p-4 search-input border-bottom" placeholder="Поиск по сообщениям" id="search-messages" type="search">
                   </form>
                   <!-- Список сообщений--><a class="sidebar-card mt-3rem px-1-5rem py-9 shadow-sm d-flex mb-1rem" href="#"><img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
-                                        <div class="d-flex align-items-center">
+                                        <div class="message-header">
                                           <p class="m-0 fw-bold">Вениамин Редакторович</p>
                                           <p class="mb-0 pe-2 small sidebar-card-time">11:45</p>
                                         </div>
                                         <p class="m-0 small sidebar-card-subtext ellipsis">o_O</p>
                                       </div></a><a class="sidebar-card mt-3rem px-1-5rem py-9 shadow-sm d-flex mb-1rem" href="#"><img class="avatar" src="images/chat/avatar_2.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
-                                        <div class="d-flex align-items-center">
+                                        <div class="message-header">
                                           <p class="m-0 fw-bold">Джедай Падаванов</p>
                                           <p class="mb-0 pe-2 small sidebar-card-time">10:12</p>
                                         </div>
                                         <p class="m-0 small sidebar-card-subtext ellipsis">Привет, скоро третий проект? Уже скоро надо будет выложить</p>
                                       </div></a><a class="sidebar-card mt-3rem px-1-5rem py-9 shadow-sm d-flex mb-1rem" href="#"><img class="avatar" src="images/chat/avatar_3.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
-                                        <div class="d-flex align-items-center">
+                                        <div class="message-header">
                                           <p class="m-0 fw-bold">Алексей Примадонин</p>
                                           <p class="mb-0 pe-2 small sidebar-card-time">08:53</p>
                                         </div>
@@ -177,7 +177,7 @@
                 </div>
               </div>
             </div>
-            <div class="chat-message_2 d-flex align-items-end ps-5 pt-3"> <img class="avatar" src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50">
+            <div class="chat-message_2 d-flex align-items-end pe-5 pt-3 flex-row-reverse"> <img class="avatar" src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50">
               <div class="bg-primary p-4 max-width-text m-0 radius shadow-sm">
                 <div class="border-bottom">
                   <p class="m-0 small sidebar-card-subtext">Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень</p>
@@ -187,7 +187,7 @@
                 </div>
               </div>
             </div>
-            <div class="chat-message_3 d-flex align-items-end ps-5 pt-5"> <img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
+            <div class="chat-message_3 d-flex align-items-end ps-5 pt-3"> <img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
               <div class="bg-light p-4 max-width-text m-0 radius shadow-sm">
                 <div class="border-bottom">
                   <p class="m-0 fw-bold">Вениамин Редакторович</p>
@@ -198,7 +198,7 @@
                 </div>
               </div>
             </div>
-            <div class="chat-message_4 d-flex align-items-end ps-5 pt-3"> <img class="avatar" src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50">
+            <div class="chat-message_4 d-flex align-items-end pe-5 pt-3 flex-row-reverse"> <img class="avatar" src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50">
               <div class="bg-primary p-4 max-width-text m-0 radius shadow-sm">
                 <div class="border-bottom">
                   <p class="m-0 small sidebar-card-subtext">А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие</p>
@@ -208,7 +208,7 @@
                 </div>
               </div>
             </div>
-            <div class="chat-message_5 d-flex align-items-end ps-5 pt-5"> <img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
+            <div class="chat-message_5 d-flex align-items-end ps-5 pt-3"> <img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
               <div class="bg-light p-4 max-width-text m-0 radius shadow-sm">
                 <div class="border-bottom">
                   <p class="m-0 fw-bold">Вениамин Редакторович</p>
@@ -220,15 +220,14 @@
               </div>
             </div>
           </div>
-          <div class="chat-footer d-flex align-items-end ps-5 pt-5">              
-            <div class="bg-light p-4 max-width-text m-0 radius shadow-sm">
-              <div class="border-bottom">
-                <p class="m-0 fw-bold">Вениамин Редакторович</p>
-                <p class="m-0 small sidebar-card-subtext">Да, я уже вышел и минут череhз 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?</p>
+          <div class="chat-footer d-flex align-items-end justify-content-between">             
+            <div class="px-4 pt-4 m-0 d-flex align-items-center w-100">
+              <div class="border-bottom flex-grow-1 py-10">
+                <form action="/">
+                  <input class="p-4 search-input border-bottom" placeholder="Напишите сообщение..." id="enter-message" type="text">
+                </form>
               </div>
-              <div class="div"> 
-                <p class="m-0 small sidebar-card-subtext ellipsis">8 минут назад           </p>
-              </div>
+              <div class="icon-wrapper"><img src="images/svg/cursor.svg" alt="send message" width="24" height="24"></div>
             </div>
           </div>
         </div>
