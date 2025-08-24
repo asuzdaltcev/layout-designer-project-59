@@ -598,8 +598,8 @@ body {
     margin-top: 0 !important;
   }
   
-  // Скрываем левую панель на мобильных устройствах
-  .col-12.col-xl-4 {
+  // Скрываем левую панель на мобильных устройствах только для chat.html
+  .chat-page .col-12.col-xl-4 {
     display: none !important;
   }
   
