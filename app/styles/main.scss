@@ -474,3 +474,30 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+// Стили для зафиксированного заголовка чата
+.chat-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #fff;
+  border-bottom: 1px solid map-get($theme-colors, "chat-border");
+}
+
+.chat-messages {
+  @include hide-scrollbar();
+  height: calc(100vh - 300px); // Высота минус высота заголовка, футера и отступы
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 1rem;
+}
+
+// Стили для зафиксированного футера чата
+.chat-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1030;
+  background-color: #fff;
+  border-top: 1px solid map-get($theme-colors, "chat-border");
+  padding: 1rem 0;
+}

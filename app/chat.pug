@@ -160,8 +160,8 @@ html(lang="ru")
                       img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
         
         // Правая область - 8 столбцов (для редактирования)
-        .col-8.position-relative.d-none.d-xl-block.d-flex.flex-column
-          .chat-header.d-flex.align-items-center.py-9.border-bottom
+        .col-8.position-relative.d-none.d-xl-block.d-flex.flex-column.h-100
+          .chat-header.d-flex.align-items-center.py-9.border-bottom.position-sticky.top-0.bg-white.z-3
               img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
               .mx-4
                 p.m-0.fw-bold Вениамин Редакторович
@@ -204,7 +204,14 @@ html(lang="ru")
                   p.m-0.fw-bold Вениамин Редакторович
                   p.m-0.small.sidebar-card-subtext о_О
                 .div 
-                  p.m-0.small.sidebar-card-subtext.ellipsis Только что            
+                  p.m-0.small.sidebar-card-subtext.ellipsis Только что 
+          .chat-footer.d-flex.align-items-end.ps-5.pt-5               
+            .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
+              .border-bottom
+                p.m-0.fw-bold Вениамин Редакторович
+                p.m-0.small.sidebar-card-subtext Да, я уже вышел и минут череhз 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?
+              .div 
+                p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад           
 
     script(src="js/bootstrap.bundle.min.js")
     script(src="js/main.js")
