@@ -148,6 +148,30 @@ $utilities: map-merge(
       values: (
         null: 10px,
       )
+    ),
+    // Утилита для padding-start: 36px
+    "padding-start-36": (
+      property: padding-left,
+      class: ps-36,
+      values: (
+        null: 36px,
+      )
+    ),
+    // Утилита для padding-end: 36px
+    "padding-end-36": (
+      property: padding-right,
+      class: pe-36,
+      values: (
+        null: 36px,
+      )
+    ),
+    // Утилита для padding-bottom: 17px
+    "padding-bottom-17": (
+      property: padding-bottom,
+      class: pb-17,
+      values: (
+        null: 17px,
+      )
     )
   )
 );

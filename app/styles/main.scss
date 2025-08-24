@@ -463,6 +463,20 @@ body {
 
 .sidebar-card-subtext {
   font-size: 80%;
+  color: map-get($theme-colors, "secondary");
+}
+
+.sidebar-card-subtext-light {
+  font-size: 80%;
+  color: #ffffff;
+}
+
+.chat-card-subtext {
+  color: map-get($theme-colors, "secondary");
+}
+
+.chat-card-subtext-light {
+  color: #ffffff;
 }
 
 .sidebar-card-time {
