@@ -73,7 +73,7 @@ $utilities: map-merge(
       property: padding-left padding-right,
       class: px-1-5rem,
       values: (
-        null: 1.5rem,
+        null: 1rem,
       )
     ),
     // Утилиты для границ с поддержкой брейкпойнтов
@@ -171,6 +171,46 @@ $utilities: map-merge(
       class: pb-17,
       values: (
         null: 17px,
+      )
+    ),
+    // Утилита для padding-bottom: 16px
+    "padding-bottom-16": (
+      property: padding-bottom,
+      class: pb-16,
+      values: (
+        null: 16px,
+      )
+    ),
+    // Утилита для padding-top: 24px
+    "padding-top-24": (
+      property: padding-top,
+      class: pt-24,
+      values: (
+        null: 24px,
+      )
+    ),
+    // Утилита для padding-left: 24px
+    "padding-left-24": (
+      property: padding-left,
+      class: pl-24,
+      values: (
+        null: 24px,
+      )
+    ),
+    // Утилита для margin-top: 8px
+    "margin-top-8": (
+      property: margin-top,
+      class: mt-8,
+      values: (
+        null: 8px,
+      )
+    ),
+    // Утилита для margin-top: 13px
+    "margin-top-13": (
+      property: margin-top,
+      class: mt-13,
+      values: (
+        null: 13px,
       )
     )
   )

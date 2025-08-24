@@ -1,9 +1,9 @@
 // Компонент Message
-mixin message(name, time, lastMessage, avatar)
-  a.sidebar-card.mt-3rem.px-1-5rem.py-9.shadow-sm.d-flex.mb-1rem(href="#")
+mixin message(name, time, lastMessage, avatar, marginTop="mt-3rem")
+  a.sidebar-card.px-1-5rem.py-9.shadow-sm.d-flex(href="#" class=marginTop)
     img.avatar(src=avatar alt="user-avatar" width="50" height="50")
     .mx-4.overflow-hidden
-      .message-header
+      .d-flex.align-items-center
         p.m-0.fw-bold= name
         p.mb-0.pe-2.small.sidebar-card-time= time
       p.m-0.small.sidebar-card-subtext.ellipsis= lastMessage

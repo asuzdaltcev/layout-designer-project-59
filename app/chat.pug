@@ -62,7 +62,7 @@ html(lang="ru")
       {
         name: "Алексей Примадонин",
         time: "08:53",
-        lastMessage: "Тесты упали &gt;_&lt;",
+        lastMessage: "Тесты упали >_<",
         avatar: "images/chat/avatar_3.jpg"
       }
     ]
@@ -118,13 +118,18 @@ html(lang="ru")
                 
                 // Таб Сообщения
                 .tab-pane.fade.pt-5.px-4.active.show#chat-tab-pane(role="tabpanel" aria-label="chat-tab" tabindex="0" aria-labelledby="#chat")
-                  h2.fw-bold.mb-4 Чаты
+                  h2.fw-bold Чаты
                   form.mb-5(action="/")
-                    input.p-4.search-input.border-bottom(placeholder="Поиск по сообщениям" id="search-messages" type="search")
+                    input.p-4.search-input.border-bottom.pt-24.pb-16.pl-24(placeholder="Поиск по сообщениям" id="search-messages" type="search")
                   
                   // Список сообщений
-                  each message in messages
-                    +message(message.name, message.time, message.lastMessage, message.avatar)
+                  each message, index in messages
+                    if index === 0
+                      +message(message.name, message.time, message.lastMessage, message.avatar)
+                    else if index === 1
+                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-8")
+                    else
+                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-13")
                 
                 // Таб Профиль
                 .tab-pane.fade.pt-5.px-4#profile-tab-pane(role="tabpanel" aria-label="profile-tab" tabindex="0" aria-labelledby="#profile")
