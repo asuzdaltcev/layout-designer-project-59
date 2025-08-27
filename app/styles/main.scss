@@ -593,6 +593,11 @@ body {
   }
 }
 
+// Стили для конкретных сообщений чата
+.chat-message_4.d-flex.align-items-end.pe-36.pt-3.flex-row-reverse.gap-3 {
+  height: 146px;
+}
+
 // Медиазапрос для экранов шириной от 500px
 @media (max-width: 500px) {
   // Убираем margin-top у компонента contact
