@@ -604,9 +604,6 @@ body {
 }
 
 // Стили для конкретных сообщений чата
-.chat-message_4.d-flex.align-items-end.pe-36.pt-3.flex-row-reverse.gap-3 {
-  height: 146px;
-}
 
 // Стили для мобильной версии чата
 .mobile-chat-messages {
@@ -615,6 +612,21 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 1rem;
+}
+
+// Отступы для сообщений в мобильной версии чата
+.mobile-chat-messages .chat-message_1 {
+  margin-left: 48px !important;
+  margin-right: 48px !important;
+  margin-top: 48px !important;
+}
+
+.mobile-chat-messages .chat-message_2,
+.mobile-chat-messages .chat-message_3,
+.mobile-chat-messages .chat-message_4,
+.mobile-chat-messages .chat-message_5 {
+  margin-left: 48px !important;
+  margin-right: 48px !important;
 }
 
 // Скрываем мобильную версию чата по умолчанию
@@ -627,12 +639,19 @@ body {
   display: block !important;
 }
 
+// Убираем паддинги у мобильной версии чата
+.tab-pane.fade.pt-5.px-4.d-xl-none#current-chat {
+  padding: 0 !important;
+}
+
 .mobile-chat-header {
   position: sticky;
   top: 0;
   z-index: 1030;
   background-color: #fff;
   border-bottom: 1px solid map-get($theme-colors, "chat-border");
+  padding-left: 16px !important;
+  padding-top: 22px !important;
 }
 
 .mobile-chat-footer {
