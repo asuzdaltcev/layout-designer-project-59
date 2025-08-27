@@ -12,7 +12,7 @@ const cleanCSS = require('gulp-clean-css');
 const paths = {
   app: {
     pug: 'app/**/*.pug',
-    scss: 'app/styles/**/*.scss',
+    scss: 'app/scss/**/*.scss',
     js: 'app/js/**/*.js',
     images: 'app/images/**/*',
     svg: 'app/images/svg/**/*.svg',
@@ -37,7 +37,7 @@ function pugTask() {
 
 // Компиляция SASS в CSS
 function sassTask() {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/scss/main.scss')
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))

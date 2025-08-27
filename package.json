@@ -7,7 +7,7 @@
     "start": "gulp",
     "build": "gulp build",
     "deploy": "surge build/",
-    "lint:css": "stylelint app/styles/**/*.scss",
+    "lint:css": "stylelint app/scss/**/*.scss",
     "lint:html": "htmlhint app/**/*.pug"
   },
   "keywords": [
