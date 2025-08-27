@@ -598,8 +598,8 @@ body {
   .chat-message_3,
   .chat-message_4,
   .chat-message_5 {
-    padding-left: 1rem !important;
-    padding-top: 1rem !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
@@ -612,6 +612,9 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 1rem;
+  display: flex !important;
+  gap: 16px !important;
+  flex-direction: column !important;
 }
 
 // Отступы для сообщений в мобильной версии чата
@@ -627,6 +630,11 @@ body {
 .mobile-chat-messages .chat-message_5 {
   margin-left: 48px !important;
   margin-right: 48px !important;
+}
+
+// Убираем класс small у параграфов в мобильной версии чата
+.mobile-chat-messages .small {
+  font-size: inherit !important;
 }
 
 // Скрываем мобильную версию чата по умолчанию
