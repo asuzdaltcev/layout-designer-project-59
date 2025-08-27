@@ -637,6 +637,16 @@ body {
   font-size: inherit !important;
 }
 
+// Добавляем margin-bottom к параграфам chat-card-subtext в мобильной версии
+.mobile-chat-messages .chat-card-subtext {
+  margin-bottom: 8px !important;
+}
+
+// Добавляем padding-top к параграфам sidebar-card-subtext в мобильной версии
+.mobile-chat-messages .sidebar-card-subtext {
+  padding-top: 5px !important;
+}
+
 // Скрываем мобильную версию чата по умолчанию
 .tab-pane.fade.d-xl-none#current-chat {
   display: none !important;
