@@ -500,8 +500,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
-  margin-top: 5px;
 }
 
 .icon-wrapper img {
@@ -665,6 +663,20 @@ body {
 // Убираем паддинги у мобильной версии чата
 .tab-pane.fade.pt-5.px-4.d-xl-none#current-chat {
   padding: 0 !important;
+}
+
+// Добавляем padding-top к навигации в мобильной версии чата
+@media (max-width: 1200px) {
+  .nav.px-3.py-3.p-xl-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important; // pt-3
+  }
+  
+  // Изменяем высоту иконок в навигации на мобильной версии
+  .nav.px-3.py-3.p-xl-3 img {
+    height: 25px !important;
+    width: auto !important;
+  }
 }
 
 .mobile-chat-header {
