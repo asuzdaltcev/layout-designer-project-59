@@ -750,6 +750,12 @@ body {
   .tab-pane.fade.pt-5.px-4.active.show#chat-tab-pane h2.fw-bold {
     margin-bottom: 24px !important;
   }
+  
+  // Добавляем padding к компонентам сообщений в десктопной версии
+  .sidebar-card.chat-message-item {
+    padding-top: 21px !important;
+    padding-bottom: 22px !important;
+  }
 }
 
 // Медиазапрос для экранов шириной от 500px
