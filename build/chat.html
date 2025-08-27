@@ -20,7 +20,7 @@
                   <li class="me-auto me-xl-0"><a class="p-0 d-flex align-items-center text-light nav-link" href="#" id="main" aria-selected="false" tabindex="-1" role="tab"><img class="filter-white" src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25"></a></li>
                   <div class="d-flex column-gap-header ps-header">
                     <!-- Иконка возврата к текущему чату (видна только на мобильных)-->
-                    <li class="nav-item small d-xl-none back-to-chats-nav" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#current-chat" id="current-chat"><img class="filter-light me-4 me-xl-2" src="images/svg/chat-left-text.svg" alt="back to current chat" width="30" height="40"></a></li>
+                    <li class="nav-item small d-xl-none back-to-chats-nav" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#current-chat-tab-pane" id="current-chat" data-bs-toggle="tab" data-bs-target="#current-chat-tab-pane" role="tab" aria-controls="current-chat-tab-pane" aria-selected="false" tabindex="-1"><img class="filter-light me-4 me-xl-2" src="images/svg/chat-left-text.svg" alt="back to current chat" width="30" height="40"></a></li>
                     <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link" href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="false" tabindex="-1"><img class="filter-light me-xl-2" src="images/sprite.svg#people" alt="contacts image" width="30" height="40">
                         <p class="d-none d-xl-block m-0">Контакты</p></a></li>
                     <li class="nav-item small" role="presentation"><a class="p-0 d-flex align-items-center text-light nav-link active" href="#chats" id="chats-tab" data-bs-toggle="tab" data-bs-target="#chat-tab-pane" role="tab" aria-controls="chat-tab-pane" aria-selected="true"><img class="filter-light me-2 me-xl-1" src="images/sprite.svg#chat" alt="chat image" width="40" height="40">
@@ -93,21 +93,21 @@
                   <form class="mb-5" action="/">
                     <input class="p-4 search-input border-bottom pt-24 pb-16 pl-24" placeholder="Поиск по сообщениям" id="search-messages" type="search">
                   </form>
-                  <!-- Список сообщений--><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-3rem" href="#" data-chat-id="1"><img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
+                  <!-- Список сообщений--><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-3rem" href="#desktop-chat" data-chat-id="1"><img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
                                         <div class="d-flex align-items-center">
                                           <p class="m-0 fw-bold">Вениамин Редакторович</p>
                                           <p class="mb-0 pe-2 small sidebar-card-time">11:45</p>
                                         </div>
                                         <p class="m-0 small sidebar-card-subtext ellipsis">o_O</p>
-                                      </div></a><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-8" href="#" data-chat-id="2"><img class="avatar" src="images/chat/avatar_2.jpg" alt="user-avatar" width="50" height="50">
+                                      </div></a><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-8" href="#desktop-chat" data-chat-id="2"><img class="avatar" src="images/chat/avatar_2.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
                                         <div class="d-flex align-items-center">
                                           <p class="m-0 fw-bold">Джедай Падаванов</p>
                                           <p class="mb-0 pe-2 small sidebar-card-time">10:12</p>
                                         </div>
                                         <p class="m-0 small sidebar-card-subtext ellipsis">Привет, скоро третий проект? Уже скоро надо будет выложить</p>
-                                      </div></a><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-13" href="#" data-chat-id="3"><img class="avatar" src="images/chat/avatar_3.jpg" alt="user-avatar" width="50" height="50">
+                                      </div></a><a class="sidebar-card px-1-5rem py-9 shadow-sm d-flex chat-message-item mt-13" href="#desktop-chat" data-chat-id="3"><img class="avatar" src="images/chat/avatar_3.jpg" alt="user-avatar" width="50" height="50">
                                       <div class="mx-4 overflow-hidden">
                                         <div class="d-flex align-items-center">
                                           <p class="m-0 fw-bold">Алексей Примадонин</p>
@@ -156,7 +156,7 @@
                   </ul>
                 </div>
                 <!-- Мобильная версия чата (скрыта по умолчанию)-->
-                <div class="tab-pane fade pt-5 px-4 d-xl-none" id="current-chat-tab-pane" role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="#current-chat" style="display: none;">
+                <div class="tab-pane fade pt-5 px-4 d-xl-none" id="current-chat-tab-pane" role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="#current-chat">
                   <div class="mobile-chat-header d-flex align-items-center py-9 border-bottom position-sticky top-0 bg-white z-3"><img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
                     <div class="mx-4">
                       <p class="m-0 fw-bold">Вениамин Редакторович</p>
@@ -234,7 +234,7 @@
           </div>
         </div>
         <!-- Правая область - 8 столбцов (для редактирования)-->
-        <div class="col-8 position-relative d-none d-xl-block d-flex flex-column h-100">
+        <div class="col-8 position-relative d-none d-xl-block d-flex flex-column h-100" id="desktop-chat">
           <div class="chat-header d-flex align-items-center py-9 border-bottom position-sticky top-0 bg-white z-3"><img class="avatar" src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50">
             <div class="mx-4">
               <p class="m-0 fw-bold">Вениамин Редакторович</p>

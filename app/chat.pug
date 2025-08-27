@@ -83,7 +83,7 @@ html(lang="ru")
                   .d-flex.column-gap-header.ps-header
                     // Иконка возврата к текущему чату (видна только на мобильных)
                     li.nav-item.small.d-xl-none.back-to-chats-nav(role="presentation")
-                      a.p-0.d-flex.align-items-center.text-light.nav-link(href="#current-chat" id="current-chat")
+                      a.p-0.d-flex.align-items-center.text-light.nav-link(href="#current-chat-tab-pane" id="current-chat" data-bs-toggle="tab" data-bs-target="#current-chat-tab-pane" role="tab" aria-controls="current-chat-tab-pane" aria-selected="false" tabindex="-1")
                         img.filter-light.me-4.me-xl-2(src="images/svg/chat-left-text.svg" alt="back to current chat" width="30" height="40")
                     li.nav-item.small(role="presentation")
                       a.p-0.d-flex.align-items-center.text-light.nav-link(href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="false" tabindex="-1")
@@ -170,7 +170,7 @@ html(lang="ru")
                       img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
                 
                 // Мобильная версия чата (скрыта по умолчанию)
-                .tab-pane.fade.pt-5.px-4.d-xl-none#current-chat-tab-pane(role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="#current-chat" style="display: none;")
+                .tab-pane.fade.pt-5.px-4.d-xl-none#current-chat-tab-pane(role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="#current-chat")
                   .mobile-chat-header.d-flex.align-items-center.py-9.border-bottom.position-sticky.top-0.bg-white.z-3
                     img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
                     .mx-4
@@ -224,7 +224,7 @@ html(lang="ru")
                         img(src="images/svg/cursor.svg" alt="send message" width="20" height="20")
         
         // Правая область - 8 столбцов (для редактирования)
-        .col-8.position-relative.d-none.d-xl-block.d-flex.flex-column.h-100
+        .col-8.position-relative.d-none.d-xl-block.d-flex.flex-column.h-100#desktop-chat
           .chat-header.d-flex.align-items-center.py-9.border-bottom.position-sticky.top-0.bg-white.z-3
               img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
               .mx-4
