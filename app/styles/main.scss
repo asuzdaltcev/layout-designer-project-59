@@ -638,6 +638,7 @@ body {
 // Добавляем margin-bottom к параграфам chat-card-subtext в мобильной версии
 .mobile-chat-messages .chat-card-subtext {
   margin-bottom: 0px !important;
+  padding-bottom: 8px !important;
 }
 
 // Добавляем margin-bottom к параграфам chat-card-subtext-light в мобильной версии
@@ -659,6 +660,7 @@ body {
 .mobile-chat-messages .sidebar-card-subtext {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
+  font-size: 12.8px !important;
 }
 
 // Скрываем мобильную версию чата по умолчанию
