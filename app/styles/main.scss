@@ -645,6 +645,16 @@ body {
   margin-bottom: 5px !important;
 }
 
+// Добавляем высоту для первого сообщения в мобильной версии чата
+.mobile-chat-messages .chat-message_1 {
+  height: 206px !important;
+}
+
+// Добавляем высоту для третьего сообщения в мобильной версии чата
+.mobile-chat-messages .chat-message_3 {
+  height: 134px !important;
+}
+
 // Добавляем padding-top к параграфам sidebar-card-subtext в мобильной версии
 .mobile-chat-messages .sidebar-card-subtext {
   padding-top: 5px !important;
