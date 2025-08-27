@@ -167,7 +167,7 @@ html(lang="ru")
                       .small
                         p.m-0.text-black-50 Twitter
                         p.m-0 @n_mikhaylov
-                                      img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
+                      img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
                   
                 // Мобильная версия чата (скрыта по умолчанию)
                 .tab-pane.fade.pt-5.px-4.d-xl-none#current-chat(role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="current-chat-tab")
@@ -268,7 +268,7 @@ html(lang="ru")
             .px-4.m-0.d-flex.align-items-center.w-100
               .border-bottom.flex-grow-1.py-10
                 form(action="/")
-                    input.p-4.search-input.border-bottom(placeholder="Напишите сообщение..." id="enter-message" type="text")
+                    input.p-4.search-input(placeholder="Напишите сообщение..." id="enter-message" type="text")
               .icon-wrapper
                 img(src="images/svg/cursor.svg" alt="send message" width="24" height="24")                        
 
