@@ -745,6 +745,13 @@ body {
   transition: opacity 0.3s ease;
 }
 
+// Устанавливаем margin-bottom у заголовка "Чаты" в десктопной версии
+@media (min-width: 1200px) {
+  .tab-pane.fade.pt-5.px-4.active.show#chat-tab-pane h2.fw-bold {
+    margin-bottom: 24px !important;
+  }
+}
+
 // Медиазапрос для экранов шириной от 500px
 @media (max-width: 500px) {
   // Убираем margin-top у компонента contact
