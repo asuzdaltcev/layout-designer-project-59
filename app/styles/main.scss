@@ -499,7 +499,7 @@ body {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center
 }
 
 .icon-wrapper img {
@@ -658,6 +658,7 @@ body {
 // Добавляем padding-top к параграфам sidebar-card-subtext в мобильной версии
 .mobile-chat-messages .sidebar-card-subtext {
   padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 // Скрываем мобильную версию чата по умолчанию
