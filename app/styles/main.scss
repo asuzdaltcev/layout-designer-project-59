@@ -114,7 +114,7 @@ body {
 
 .no-scroll-overflow {
   @include hide-scrollbar();
-  height: calc(100vh - 80px); // Высота минус высота навигации
+  height: calc(100vh - 60px); // Высота минус высота навигации
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -639,7 +639,12 @@ body {
 
 // Добавляем margin-bottom к параграфам chat-card-subtext в мобильной версии
 .mobile-chat-messages .chat-card-subtext {
-  margin-bottom: 8px !important;
+  margin-bottom: 0px !important;
+}
+
+// Добавляем margin-bottom к параграфам chat-card-subtext-light в мобильной версии
+.mobile-chat-messages .chat-card-subtext-light {
+  margin-bottom: 5px !important;
 }
 
 // Добавляем padding-top к параграфам sidebar-card-subtext в мобильной версии
