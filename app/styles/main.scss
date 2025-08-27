@@ -510,7 +510,12 @@ body {
 // Добавляем margin-right к icon-wrapper в десктопной версии
 @media (min-width: 1200px) {
   .icon-wrapper {
-    margin-right: 37px !important;
+    margin-right: 32px !important;
+  }
+  
+  // Добавляем padding-top к параграфам sidebar-card-subtext.ellipsis в десктопной версии
+  .sidebar-card-subtext.ellipsis {
+    padding-top: 6px !important;
   }
 }
 
