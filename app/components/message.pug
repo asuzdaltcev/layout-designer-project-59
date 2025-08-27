@@ -1,6 +1,6 @@
 // Компонент Message
 mixin message(name, time, lastMessage, avatar, marginTop="mt-3rem", chatId)
-  a.sidebar-card.px-1-5rem.py-9.shadow-sm.d-flex.chat-message-item(href="#desktop-chat" class=marginTop data-chat-id=chatId)
+  a.sidebar-card.px-1-5rem.py-9.shadow-sm.d-flex.chat-message-item(href="#current-chat-tab-pane" class=marginTop data-chat-id=chatId data-bs-toggle="tab" data-bs-target="#current-chat-tab-pane" role="tab" aria-controls="current-chat-tab-pane" aria-selected="false" tabindex="-1")
     img.avatar(src=avatar alt="user-avatar" width="50" height="50")
     .mx-4.overflow-hidden
       .d-flex.align-items-center
