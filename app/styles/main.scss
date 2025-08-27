@@ -563,6 +563,8 @@ body {
   
 
   
+
+  
   // Левая область занимает всю ширину
   .col-12.col-xl-4 {
     flex: 0 0 100%;
@@ -613,6 +615,16 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 1rem;
+}
+
+// Скрываем мобильную версию чата по умолчанию
+.tab-pane.fade.d-xl-none#current-chat {
+  display: none !important;
+}
+
+// Показываем мобильную версию чата только при активации таба
+.tab-pane.fade.d-xl-none#current-chat.show {
+  display: block !important;
 }
 
 .mobile-chat-header {
