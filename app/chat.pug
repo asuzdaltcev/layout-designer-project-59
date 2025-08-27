@@ -81,6 +81,10 @@ html(lang="ru")
                     a.p-0.d-flex.align-items-center.text-light.nav-link(href="#" id="main" aria-selected="false" tabindex="-1" role="tab")
                       img.filter-white(src="images/sprite.svg#logo" alt="hexlet logo" width="25" height="25")
                   .d-flex.column-gap-header.ps-header
+                    // Иконка возврата к текущему чату (видна только на мобильных)
+                    li.nav-item.small.d-xl-none.back-to-chats-nav(role="presentation")
+                      a.p-0.d-flex.align-items-center.text-light.nav-link(href="#current-chat" id="current-chat")
+                        img.filter-light.me-4.me-xl-2(src="images/svg/chat-left-text.svg" alt="back to current chat" width="30" height="40")
                     li.nav-item.small(role="presentation")
                       a.p-0.d-flex.align-items-center.text-light.nav-link(href="#contacts" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" role="tab" aria-controls="contacts-tab-pane" aria-selected="false" tabindex="-1")
                         img.filter-light.me-xl-2(src="images/sprite.svg#people" alt="contacts image" width="30" height="40")
@@ -125,11 +129,11 @@ html(lang="ru")
                   // Список сообщений
                   each message, index in messages
                     if index === 0
-                      +message(message.name, message.time, message.lastMessage, message.avatar)
+                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-3rem", index + 1)
                     else if index === 1
-                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-8")
+                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-8", index + 1)
                     else
-                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-13")
+                      +message(message.name, message.time, message.lastMessage, message.avatar, "mt-13", index + 1)
                 
                 // Таб Профиль
                 .tab-pane.fade.pt-5.px-4#profile-tab-pane(role="tabpanel" aria-label="profile-tab" tabindex="0" aria-labelledby="#profile")
@@ -164,6 +168,60 @@ html(lang="ru")
                         p.m-0.text-black-50 Twitter
                         p.m-0 @n_mikhaylov
                       img.ms-auto.filter-grey(src="images/sprite.svg#twitter" alt="twitter image" width="20" height="20")
+                
+                // Мобильная версия чата (скрыта по умолчанию)
+                .tab-pane.fade.pt-5.px-4.d-xl-none#current-chat-tab-pane(role="tabpanel" aria-label="current-chat-tab" tabindex="0" aria-labelledby="#current-chat" style="display: none;")
+                  .mobile-chat-header.d-flex.align-items-center.py-9.border-bottom.position-sticky.top-0.bg-white.z-3
+                    img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
+                    .mx-4
+                      p.m-0.fw-bold Вениамин Редакторович
+                      p.m-0.small.sidebar-card-subtext Онлайн
+                  .mobile-chat-messages
+                    .chat-message_1.d-flex.align-items-end.ps-36.pt-5.gap-3  
+                      img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
+                      .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
+                        .border-bottom
+                          p.m-0.fw-bold Вениамин Редакторович
+                          p.m-0.small.chat-card-subtext.pb-17 Да, я уже вышел и минут череhз 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?
+                        .div 
+                          p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад
+                    .chat-message_2.d-flex.align-items-end.pe-36.pt-3.flex-row-reverse.gap-3
+                      .bg-primary.p-4.max-width-text.m-0.radius.shadow-sm
+                        .border-bottom
+                          p.m-0.small.chat-card-subtext-light.pb-17 Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень
+                        .div 
+                          p.m-0.small.sidebar-card-subtext.ellipsis 8 минут назад
+                      img.avatar(src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50")    
+                    .chat-message_3.d-flex.align-items-end.ps-36.pt-3.gap-3  
+                      img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
+                      .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
+                        .border-bottom
+                          p.m-0.fw-bold Вениамин Редакторович
+                          p.m-0.small.chat-card-subtext.pb-17 Лады
+                        .div 
+                          p.m-0.small.sidebar-card-subtext.ellipsis 5 минут назад    
+                    .chat-message_4.d-flex.align-items-end.pe-36.pt-3.flex-row-reverse.gap-3  
+                      .bg-primary.p-4.max-width-text.m-0.radius.shadow-sm
+                        .border-bottom
+                          p.m-0.small.chat-card-subtext-light.pb-17 А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие
+                        .div 
+                          p.m-0.small.sidebar-card-subtext.ellipsis 3 минуты назад 
+                      img.avatar(src="images/chat/avatar_1.jpg" alt="user-avatar" width="50" height="50")
+                    .chat-message_5.d-flex.align-items-end.ps-36.pt-3.gap-3  
+                      img.avatar(src="images/chat/avatar_4.jpg" alt="user-avatar" width="50" height="50")
+                      .bg-light.p-4.max-width-text.m-0.radius.shadow-sm
+                        .border-bottom
+                          p.m-0.fw-bold Вениамин Редакторович
+                          p.m-0.small.chat-card-subtext.pb-17 о_О
+                        .div 
+                          p.m-0.small.sidebar-card-subtext.ellipsis Только что 
+                  .mobile-chat-footer.d-flex.align-items-end.justify-content-between              
+                    .px-3.m-0.d-flex.align-items-center.w-100
+                      .border-bottom.flex-grow-1.py-2
+                        form(action="/")
+                            input.p-3.search-input.border-bottom(placeholder="Напишите сообщение..." id="mobile-enter-message" type="text")
+                      .icon-wrapper
+                        img(src="images/svg/cursor.svg" alt="send message" width="20" height="20")
         
         // Правая область - 8 столбцов (для редактирования)
         .col-8.position-relative.d-none.d-xl-block.d-flex.flex-column.h-100
